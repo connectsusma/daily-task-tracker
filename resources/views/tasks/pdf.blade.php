@@ -4,8 +4,8 @@
     <title>Task Report PDF</title>
     <style>
         @page {
-            size: A4 landscape; /* Force landscape A4 */
-            margin: 20mm;
+            size: A4 landscape;
+            margin: 10mm;
         }
 
         body {
@@ -14,21 +14,58 @@
             color: #333;
         }
 
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #008453;
+            padding-bottom: 10px;
+        }
+
+        .header .logo {
+            max-height: 60px;
+        }
+
+        .header .company-details {
+            text-align: right;
+        }
+
+        .company-name {
+            font-size: 20px;
+            color: #008453;
+            font-weight: bold;
+        }
+
+        .department {
+            font-size: 14px;
+            color: #ff9e2f;
+        }
+
+        .report-meta {
+            margin-bottom: 20px;
+        }
+
+        .report-meta span {
+            display: inline-block;
+            margin-right: 30px;
+            font-weight: bold;
+        }
+
         h1 {
             text-align: center;
-            margin-bottom: 20px;
-            color: #568b2a;
+            margin-bottom: 10px;
+            color: #008453;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 0 auto;
         }
 
         th, td {
             border: 1px solid #ccc;
-            padding: 10px 8px;
+            padding: 8px 10px;
             text-align: left;
             vertical-align: top;
         }
@@ -36,20 +73,32 @@
         th {
             background-color: #ff9e2f;
             color: white;
-            font-weight: bold;
         }
 
         tr:nth-child(even) {
-            background-color: #f2f2f2;
+            background-color: #f9f9f9;
         }
 
         tr:hover {
-            background-color: #e8f0fe;
+            background-color: #eef6f2;
         }
     </style>
 </head>
 <body>
-    <h1>Task Report - {{ $date }}</h1>
+
+    <div class="header">
+        <div class="company-details">
+            <div class="company-name">Laxmi Laghubitta Bittya Sanstha Limited</div>
+            <div class="department">IT Department</div>
+        </div>
+    </div>
+
+    <h1>Daily Task Report</h1>
+
+    <div class="report-meta">
+        <span>Name of Staff:Susmasagar Bhattarai </span>
+    </div>
+
     <table>
         <thead>
             <tr>
@@ -74,5 +123,6 @@
             @endforeach
         </tbody>
     </table>
+
 </body>
 </html>

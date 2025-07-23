@@ -24,3 +24,4 @@ Route::get('/', [TaskController::class, 'index']);
 Route::post('/tasks', [TaskController::class, 'store']);
 Route::get('/report', [TaskController::class, 'report']);
 Route::get('/export-pdf/{date?}', [TaskController::class, 'exportPdf']);
+Route::post('/tasks/update', [TaskController::class, 'update'])->name('tasks.update');

@@ -7,6 +7,13 @@
 <body class="bg-light p-4">
 <div class="container">
     <h1>📊 Task Report</h1>
+    <div class="text-center mt-4">
+    <a href="/" class="btn btn-lg btn-outline-primary">
+        ⬅️ Return to Homepage
+    </a>
+</div>
+
+    
     <form method="GET" action="/report" class="mb-3">
         <label for="date">Select Date:</label>
         <input type="date" name="date" value="{{ $date }}" class="form-control" style="max-width: 250px;">
