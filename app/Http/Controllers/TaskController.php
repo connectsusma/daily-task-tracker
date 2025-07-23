@@ -38,12 +38,12 @@ class TaskController extends Controller
 
         Task::create([
             'task_id' => $task_id,
-            'name' => $request->name,
-            'branch' => $request->branch,
-            'staff' => $request->staff,
-            'summary' => $request->summary,
-            'status' => $request->status,
-            'handed_over' => $request->handed_over,
+            'name' => $request->input('name'),
+            'branch' => $request->input('branch'),
+            'staff' => $request->input('staff'),
+            'summary' => $request->input('summary'),
+            'status' => $request->input('status'),
+            'handed_over' => $request->input('handed_over'),
             'task_date' => $todayDate,
         ]);
 
@@ -68,4 +68,6 @@ class TaskController extends Controller
 
         return $pdf->download("tasks_$date.pdf");
     }
+
+    
 }
